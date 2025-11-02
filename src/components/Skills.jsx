@@ -4,16 +4,16 @@ import { SiMongodb, SiExpress, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiTai
 
 const Skills = () => {
   const skills = [
-    { name: 'React.js', icon: <FaReact className="text-primary-400" />, level: 85 },
-    { name: 'Node.js', icon: <FaNodeJs className="text-green-500" />, level: 80 },
-    { name: 'Express.js', icon: <SiExpress className="text-gray-300" />, level: 80 },
-    { name: 'MongoDB', icon: <SiMongodb className="text-green-400" />, level: 75 },
+    { name: 'React.js', icon: <FaReact className="text-primary-400" />, level: 75 },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-500" />, level: 65 },
+    { name: 'Express.js', icon: <SiExpress className="text-gray-300" />, level: 75 },
+    { name: 'MongoDB', icon: <SiMongodb className="text-green-400" />, level: 65 },
     { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" />, level: 85 },
     { name: 'HTML5', icon: <SiHtml5 className="text-orange-500" />, level: 90 },
     { name: 'CSS3', icon: <SiCss3 className="text-blue-500" />, level: 85 },
-    { name: 'Bootstrap', icon: <SiBootstrap className="text-purple-500" />, level: 80 },
+    { name: 'Bootstrap', icon: <SiBootstrap className="text-purple-500" />, level: 85 },
     { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-400" />, level: 85 },
-    { name: 'Git', icon: <FaGitAlt className="text-red-500" />, level: 75 },
+    { name: 'GitHub', icon: <FaGitAlt className="text-red-500" />, level: 75 },
   ];
 
   return (
@@ -64,6 +64,10 @@ const Skills = () => {
                 </li>
                 <li className="flex items-center">
                   <span className="text-primary-400 mr-2">▹</span>
+               Form Handling & Validation
+                </li>
+                <li className="flex items-center">
+                  <span className="text-primary-400 mr-2">▹</span>
                   UI/UX Implementation
                 </li>
               </ul>
@@ -82,11 +86,15 @@ const Skills = () => {
                 </li>
                 <li className="flex items-center">
                   <span className="text-primary-400 mr-2">▹</span>
-                  Version Control (Git)
+                 Package Management
                 </li>
                 <li className="flex items-center">
                   <span className="text-primary-400 mr-2">▹</span>
-                  Deployment & DevOps
+                 Authentication & Security 
+                </li>
+                   <li className="flex items-center">
+                  <span className="text-primary-400 mr-2">▹</span>
+                  Version Control (Git)
                 </li>
               </ul>
             </div>
