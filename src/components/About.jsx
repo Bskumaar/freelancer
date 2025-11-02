@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FaCode, FaServer, FaTools } from "react-icons/fa";
 
@@ -16,32 +15,32 @@ const About = () => {
       year: "2015 – 2021",
       title: "💻 Computer Operator (HR & CE Department)",
       desc: "After facing health and family challenges, I moved back to my hometown and worked as a Computer Operator. This period helped me develop strong technical and administrative skills, improving my efficiency with computer systems.",
-      color: "border-emerald-500",
-      text: "text-emerald-400",
+      color: "border-primary-500",
+      text: "text-primary-400",
       direction: "right"
     },
     {
       year: "2022",
       title: "🌟 Back to the VFX Industry",
       desc: "After 9 years, I got the opportunity to rejoin the VFX industry. Returning to my passion gave me immense confidence and reminded me of my love for creative work.",
-      color: "border-indigo-500",
-      text: "text-indigo-400",
+      color: "border-primary-500",
+      text: "text-primary-400",
       direction: "left"
     },
     {
       year: "2023 – Present",
       title: "🧠 Transition to Software Development",
       desc: "In 2023, I started learning web development. I began with HTML and soon mastered CSS, Bootstrap, JavaScript, and React.js. Later, I completed the MERN Stack to become a full-stack developer.",
-      color: "border-pink-500",
-      text: "text-pink-400",
+      color: "border-primary-500",
+      text: "text-primary-400",
       direction: "right"
     },
     {
       year: "Current",
       title: "🚀 Freelance Developer",
       desc: "I am currently working as a Freelance Developer, building responsive, user-friendly web applications for clients. My next goal is to join a software company and grow into a skilled MERN Stack Developer.",
-      color: "border-yellow-500",
-      text: "text-yellow-400",
+      color: "border-primary-500",
+      text: "text-primary-400",
       direction: "left"
     }
   ];
@@ -92,17 +91,16 @@ const About = () => {
             </motion.div>
           ))}
 
-          {/* Closing Note */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-primary-600 to-emerald-600 rounded-2xl p-6 shadow-lg"
+            className="rounded-2xl p-6 text-center shadow-[0_0_25px_rgba(255,255,255,0.1)] border border-gray-700"
           >
-            <p className="text-white text-lg font-medium leading-relaxed">
-              I may not be the best developer yet, but I’m improving every day —
-              learning, coding, and striving to become one of the best in the field. 💻✨
+            <p className="text-white text-lg font-medium leading-relaxed italic tracking-wide">
+              I may not be the best developer yet, but I’m improving every day — learning, coding,
+              and striving to become one of the best in the field. 💻✨
             </p>
           </motion.div>
         </div>

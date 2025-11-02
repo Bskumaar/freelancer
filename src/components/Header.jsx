@@ -24,13 +24,18 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-    }`}>
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      }`}
+    >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <a href="#home" className="text-2xl font-bold text-primary-400 animate-pulse">
-            Sureshkumar.B
+          <a
+            href="#home"
+            className="text-2xl font-bold text-primary-400 animate-pulse"
+          >
+            Sureshkumar
           </a>
 
           {/* Desktop Menu */}

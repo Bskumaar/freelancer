@@ -10,7 +10,8 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+  <div className="bg-gradient-to-br from-gray-900 to-primary-900 text-white min-h-screen">
+
       <Header />
       <Hero />
       <About />

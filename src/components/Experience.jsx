@@ -7,7 +7,7 @@ const Experience = () => {
       title: "MERN Stack Developer",
       company: "Freelancer",
       period: "Sep 2024 – Present",
-      icon: <FaLaptopCode className="text-primary-400 text-4xl" />,
+      icon: <FaLaptopCode className="text-blue-400 text-4xl" />,
       responsibilities: [
         "Developed and maintained dynamic websites using MERN Stack.",
         "Built responsive UI and optimized performance.",
@@ -53,7 +53,7 @@ const Experience = () => {
     <section id="experience" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16 text-white">
-          Work <span className="text-primary-400">Experience</span>
+          Work <span className="text-primary-500">Experience</span>
         </h2>
 
         {/* Single Row - 4 Cards Side by Side */}
@@ -61,15 +61,13 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 transition-all duration-500 ease-in-out hover:(scale-105 -translate-y-2 border-primary-500 shadow-primary-500/30)"
+              className="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 transition-all duration-500 ease-in-out hover:(scale-105 -translate-y-2 border-blue-500 shadow-blue-500/30)"
             >
               <div className="flex items-center mb-4 space-x-4">
                 {exp.icon}
                 <div>
                   <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
-                  <p className="text-primary-400 font-semibold">
-                    {exp.company}
-                  </p>
+                  <p className="text-primary-400 font-semibold">{exp.company}</p>
                   <p className="text-gray-400 text-sm">{exp.period}</p>
                 </div>
               </div>
@@ -77,7 +75,7 @@ const Experience = () => {
               <ul className="space-y-2 mt-4">
                 {exp.responsibilities.map((resp, idx) => (
                   <li key={idx} className="text-gray-300 flex items-start">
-                    <span className="text-primary-400 mr-2 mt-1 flex-shrink-0">
+                    <span className="text-blue-400 mr-2 mt-1 flex-shrink-0">
                       ▹
                     </span>
                     {resp}

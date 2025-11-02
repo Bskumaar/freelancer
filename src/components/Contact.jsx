@@ -15,7 +15,6 @@ const Contact = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // show button after user scrolls down 100px
       setShowTopBtn(window.scrollY > 100);
     };
 
@@ -34,7 +33,6 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulated form submission
     setTimeout(() => {
       console.log('Form submitted:', formData);
       setIsSubmitting(false);
@@ -52,7 +50,7 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-900 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16 text-white">
-          Get In <span className="text-pink-400">Touch</span>
+          Get In <span className="text-primary-400">Touch</span>
         </h2>
         
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -65,8 +63,8 @@ const Contact = () => {
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-center p-4 bg-gray-800 rounded-2xl hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 group">
-                <div className="text-pink-400 mr-4 group-hover:text-white">
+              <div className="flex items-center p-4 bg-gray-800 rounded-2xl hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 group">
+                <div className="text-primary-400 mr-4 group-hover:text-white">
                   <FaPhone size={24} />
                 </div>
                 <div>
@@ -75,8 +73,8 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-center p-4 bg-gray-800 rounded-2xl hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 group">
-                <div className="text-pink-400 mr-4 group-hover:text-white">
+              <div className="flex items-center p-4 bg-gray-800 rounded-2xl hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 group">
+                <div className="text-primary-400 mr-4 group-hover:text-white">
                   <FaEnvelope size={24} />
                 </div>
                 <div>
@@ -86,14 +84,13 @@ const Contact = () => {
               </div>
               
               {/* Location Section */}
-              <div className="flex items-center p-4 bg-gray-800 rounded-2xl hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 group">
-                <div className="text-pink-400 mr-4 group-hover:text-white">
+              <div className="flex items-center p-4 bg-gray-800 rounded-2xl hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 group">
+                <div className="text-primary-400 mr-4 group-hover:text-white">
                   <FaMapMarkerAlt size={24} />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Location</h4>
                   <p className="text-gray-300 group-hover:text-gray-200">
-                    <span className="block">📍 Permanent: Pushpavanam Post, Vedharanyam TK, Nagapattinam Dt.</span>
                     <span className="block">🏠 Local: Madipakkam, Chennai</span>
                   </p>
                 </div>
@@ -105,7 +102,7 @@ const Contact = () => {
               <div className="flex space-x-4">
                 <a
                   href="https://github.com/sureshkumarb"
-                  className="bg-gray-800 hover:bg-pink-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="bg-gray-800 hover:bg-primary-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                   aria-label="GitHub"
                   target="_blank" rel="noopener noreferrer"
                 >
@@ -113,7 +110,7 @@ const Contact = () => {
                 </a>
                 <a
                   href="https://linkedin.com/in/sureshkumarb"
-                  className="bg-gray-800 hover:bg-pink-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="bg-gray-800 hover:bg-primary-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                   aria-label="LinkedIn"
                   target="_blank" rel="noopener noreferrer"
                 >
@@ -136,7 +133,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 transition-colors"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -150,7 +147,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 transition-colors"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -165,7 +162,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 transition-colors"
                   placeholder="Enter subject"
                 />
               </div>
@@ -179,7 +176,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-pink-400 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 transition-colors resize-none"
                   placeholder="Enter your message..."
                 ></textarea>
               </div>
@@ -187,7 +184,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-pink-600 hover:bg-pink-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center ${
+                className={`w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center ${
                   isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
@@ -228,9 +225,9 @@ const Contact = () => {
       <button
         onClick={scrollToTop}
         aria-label="Back to top"
-        className={`fixed right-6 md:right-10 bottom-6 z-50 p-3 rounded-full shadow-xl transform transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-300 ${
+        className={`fixed right-6 md:right-10 bottom-6 z-50 p-3 rounded-full shadow-xl transform transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-300 ${
           showTopBtn ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'
-        } bg-gradient-to-r from-pink-500 to-rose-600 text-white`}
+        } bg-gradient-to-r from-primary-500 to-primary-700 text-white`}
       >
         <FaArrowUp />
       </button>

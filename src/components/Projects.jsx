@@ -1,7 +1,7 @@
 import React from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import sivaImg from "../assets/siva.jpg";
-import akshaya from "../assets/Akshaya.jpg";
+import akshaya from "../assets/akshaya.jpg";
 import spacesite from "../assets/spacesite.jpg";
 import process from "../assets/process.jpg";
 
