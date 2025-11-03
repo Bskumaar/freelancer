@@ -38,7 +38,7 @@ const About = () => {
     {
       year: "Current",
       title: "🚀 Freelance Developer",
-      desc: "I am currently working as a Freelance Developer, building responsive, user-friendly web applications for clients. My next goal is to join a software company and grow into a skilled MERN Stack Developer.",
+      desc: "I am currently working as a Freelance Developer, building responsive, user-friendly web applications for clients. My next goal is to join a software company and grow into a skilled Full Stack Developer.",
       color: "border-primary-500",
       text: "text-primary-400",
       direction: "left"
@@ -111,7 +111,7 @@ const About = () => {
             {
               icon: <FaCode className="text-4xl text-primary-400 mb-4 mx-auto" />,
               title: "Frontend",
-              desc: "React.js, HTML5, CSS3, JavaScript, Tailwind CSS"
+              desc: "React.js, HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS"
             },
             {
               icon: <FaServer className="text-4xl text-primary-400 mb-4 mx-auto" />,
