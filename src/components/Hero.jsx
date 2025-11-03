@@ -1,38 +1,25 @@
-
 import React, { useEffect, useState } from "react";
-import { FaDownload, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaDownload, FaGithub, FaLinkedin, FaEnvelope, FaHeart, FaThumbsDown, FaEye } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import profile from "../assets/suresh.jpeg";
 
 const Hero = () => {
   const [codeText, setCodeText] = useState("");
+  const [views, setViews] = useState(0);
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
+  const [liked, setLiked] = useState(false);
+  const [disliked, setDisliked] = useState(false);
+
   const fullCode = `
   import React from "react";
-  import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-  import sivaImg from "../assets/siva.jpg";
-  import akshaya from "../assets/Akshaya.jpg";
-  import spacesite from "../assets/spacesite.jpg";
-  import process from "../assets/process.jpg";
-
   const Projects = () => {
-    const projects = [
-      { title: "Offer Card Generator", tech: ["React", "Tailwind", "Canvas API"] },
-      { title: "VFX Artist Portfolio", tech: ["React", "CSS3", "Animations"] },
-      { title: "VFX Studio Company Website", tech: ["React", "Tailwind", "Responsive"] },
-      { title: "Project Management System", tech: ["MERN", "MongoDB", "Express"] },
-    ];
-
-    return (
-      <section id="projects">
-        <h2>My Projects</h2>
-        {projects.map((p, i) => <div key={i}>{p.title}</div>)}
-      </section>
-    );
+    return <section id="projects">My Projects</section>;
   };
   export default Projects;
   `;
 
-  // 🔹 Typing effect loop
+  // Typing animation
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -43,24 +30,64 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // View count
+  useEffect(() => {
+    fetch("https://api.countapi.xyz/hit/suresh-portfolio/views")
+      .then((res) => res.json())
+      .then((data) => setViews(data.value));
+  }, []);
+
+  // Like
+  const handleLike = () => {
+    if (!liked && !disliked) {
+      setLiked(true);
+      fetch("https://api.countapi.xyz/update/suresh-portfolio/likes/?amount=1")
+        .then((res) => res.json())
+        .then((data) => setLikes(data.value));
+    }
+  };
+
+  // Dislike
+  const handleDislike = () => {
+    if (!disliked && !liked) {
+      setDisliked(true);
+      fetch("https://api.countapi.xyz/update/suresh-portfolio/dislikes/?amount=1")
+        .then((res) => res.json())
+        .then((data) => setDislikes(data.value));
+    }
+  };
+
+  // Load current like/dislike count
+  useEffect(() => {
+    fetch("https://api.countapi.xyz/get/suresh-portfolio/likes")
+      .then((res) => res.json())
+      .then((data) => setLikes(data.value || 0));
+    fetch("https://api.countapi.xyz/get/suresh-portfolio/dislikes")
+      .then((res) => res.json())
+      .then((data) => setDislikes(data.value || 0));
+  }, []);
+
+  const total = likes + dislikes;
+  const likePercent = total ? (likes / total) * 100 : 0;
+  const dislikePercent = total ? (dislikes / total) * 100 : 0;
+
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden pt-20"
     >
-      {/* 🔹 Left background typing */}
+      {/* Left background typing */}
       <div className="absolute left-0 top-0 w-1/2 h-full opacity-10 text-green-400 font-mono text-sm whitespace-pre-wrap px-6 leading-6 overflow-hidden">
         <pre className="animate-fade">{codeText}</pre>
       </div>
 
-      {/* 🔹 Right background typing */}
+      {/* Right background typing */}
       <div className="absolute right-0 top-0 w-1/2 h-full opacity-10 text-green-400 font-mono text-sm whitespace-pre-wrap px-6 leading-6 overflow-hidden text-right">
         <pre className="animate-fade">{codeText}</pre>
       </div>
 
-      {/* 🔹 Main Content */}
+      {/* Main content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
-        {/* Profile Image */}
         <div className="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary-500 shadow-lg animate-float">
           <img
             src={profile}
@@ -69,12 +96,10 @@ const Hero = () => {
           />
         </div>
 
-        {/* Name */}
         <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-400 animate-pulse">
           Sureshkumar B
         </h1>
 
-        {/* Typing Animation */}
         <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
           <TypeAnimation
             sequence={[
@@ -93,6 +118,52 @@ const Hero = () => {
         <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
           Building modern, responsive web applications as a freelancer. Actively looking for a full-time role where I can contribute and grow as a developer.
         </p>
+
+        {/* View / Like / Dislike Section */}
+        <div className="flex flex-col items-center mb-8">
+          <div className="flex space-x-6 text-lg mb-4">
+            <div className="flex items-center space-x-2 text-gray-300">
+              <FaEye className="text-primary-400" />
+              <span>{views} Views</span>
+            </div>
+            <button
+              onClick={handleLike}
+              disabled={liked || disliked}
+              className={`flex items-center space-x-2 transition-all ${
+                liked ? "text-green-400" : "text-gray-400 hover:text-green-400"
+              }`}
+            >
+              <FaHeart />
+              <span>{likes}</span>
+            </button>
+            <button
+              onClick={handleDislike}
+              disabled={liked || disliked}
+              className={`flex items-center space-x-2 transition-all ${
+                disliked ? "text-red-400" : "text-gray-400 hover:text-red-400"
+              }`}
+            >
+              <FaThumbsDown />
+              <span>{dislikes}</span>
+            </button>
+          </div>
+
+          {/* Reaction Progress Bar */}
+          <div className="w-64 h-3 bg-gray-700 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-green-500 transition-all duration-500"
+              style={{ width: `${likePercent}%` }}
+            ></div>
+            <div
+              className="h-full bg-red-500 transition-all duration-500 -mt-3"
+              style={{ width: `${dislikePercent}%` }}
+            ></div>
+          </div>
+
+          <p className="text-sm text-gray-400 mt-2">
+            👍 {likePercent.toFixed(0)}% | 👎 {dislikePercent.toFixed(0)}%
+          </p>
+        </div>
 
         {/* Resume Button */}
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
