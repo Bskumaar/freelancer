@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { FaDownload, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
@@ -8,31 +7,101 @@ const Hero = () => {
   const [codeText, setCodeText] = useState("");
   const fullCode = `
   import React from "react";
-  import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-  import sivaImg from "../assets/siva.jpg";
-  import akshaya from "../assets/Akshaya.jpg";
-  import spacesite from "../assets/spacesite.jpg";
-  import process from "../assets/process.jpg";
-
-  const Projects = () => {
-    const projects = [
-      { title: "Offer Card Generator", tech: ["React", "Tailwind", "Canvas API"] },
-      { title: "VFX Artist Portfolio", tech: ["React", "CSS3", "Animations"] },
-      { title: "VFX Studio Company Website", tech: ["React", "Tailwind", "Responsive"] },
-      { title: "Project Management System", tech: ["MERN", "MongoDB", "Express"] },
+  import { FaLaptopCode, FaPalette, FaCalculator } from "react-icons/fa";
+  
+  const Experience = () => {
+    const experiences = [
+      {
+        title: "MERN Stack Developer",
+        company: "Freelancer",
+        period: "Sep 2024 – Present",
+        icon: <FaLaptopCode className="text-blue-400 text-4xl" />,
+        responsibilities: [
+          "Developed and maintained dynamic websites using MERN Stack.",
+          "Built responsive UI and optimized performance.",
+          "Handled end-to-end project lifecycle and client communication.",
+        ],
+      },
+      {
+        title: "VFX Artist",
+        company: "Future Works Media Ltd, Chennai",
+        period: "Oct 2022 – Sep 2024",
+        icon: <FaPalette className="text-purple-400 text-4xl" />,
+        responsibilities: [
+          "Worked on visual effects for movies and commercials.",
+          "Collaborated with creative teams to deliver quality visuals.",
+          "Managed tight production schedules and deadlines.",
+        ],
+      },
+      {
+        title: "Accountant & Computer Operator",
+        company: "TN HR&CE, Vecharanyam",
+        period: "2015 – 2021",
+        icon: <FaCalculator className="text-green-400 text-4xl" />,
+        responsibilities: [
+          "Managed daily accounting operations and data entry.",
+          "Prepared and maintained financial reports.",
+          "Ensured accurate and timely record keeping.",
+        ],
+      },
+      {
+        title: "VFX Artist",
+        company: "Future Works Media Ltd, Chennai",
+        period: "Feb 2011 – Feb 2013",
+        icon: <FaPalette className="text-purple-400 text-4xl" />,
+        responsibilities: [
+          "Created realistic visual effects for film projects.",
+          "Maintained artistic consistency and visual fidelity.",
+          "Delivered top-quality work under production deadlines.",
+        ],
+      },
     ];
-
+  
     return (
-      <section id="projects">
-        <h2>My Projects</h2>
-        {projects.map((p, i) => <div key={i}>{p.title}</div>)}
+      <section id="experience" className="py-20 bg-gray-900">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
+            Work <span className="text-primary-500">Experience</span>
+          </h2>
+  
+          {/* Single Row - 4 Cards Side by Side */}
+          <div className="flex flex-wrap justify-center gap-6">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 transition-all duration-500 ease-in-out hover:(scale-105 -translate-y-2 border-blue-500 shadow-blue-500/30)"
+              >
+                <div className="flex items-center mb-4 space-x-4">
+                  {exp.icon}
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
+                    <p className="text-primary-400 font-semibold">{exp.company}</p>
+                    <p className="text-gray-400 text-sm">{exp.period}</p>
+                  </div>
+                </div>
+  
+                <ul className="space-y-2 mt-4">
+                  {exp.responsibilities.map((resp, idx) => (
+                    <li key={idx} className="text-gray-300 flex items-start">
+                      <span className="text-blue-400 mr-2 mt-1 flex-shrink-0">
+                        ▹
+                      </span>
+                      {resp}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     );
   };
-  export default Projects;
+  
+  export default Experience;
+  
   `;
 
-  // 🔹 Typing effect loop
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -48,19 +117,16 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden pt-20"
     >
-      {/* 🔹 Left background typing */}
+      {/* Background code animation */}
       <div className="absolute left-0 top-0 w-1/2 h-full opacity-10 text-green-400 font-mono text-sm whitespace-pre-wrap px-6 leading-6 overflow-hidden">
         <pre className="animate-fade">{codeText}</pre>
       </div>
-
-      {/* 🔹 Right background typing */}
       <div className="absolute right-0 top-0 w-1/2 h-full opacity-10 text-green-400 font-mono text-sm whitespace-pre-wrap px-6 leading-6 overflow-hidden text-right">
         <pre className="animate-fade">{codeText}</pre>
       </div>
 
-      {/* 🔹 Main Content */}
+      {/* Main Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
-        {/* Profile Image */}
         <div className="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary-500 shadow-lg animate-float">
           <img
             src={profile}
@@ -69,20 +135,13 @@ const Hero = () => {
           />
         </div>
 
-        {/* Name */}
         <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-400 animate-pulse">
-          Sureshkumar B
+          Sureshkumar Balakrishnan
         </h1>
 
-        {/* Typing Animation */}
         <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
           <TypeAnimation
-            sequence={[
-              "MERN Stack Developer",
-              2000,
-              "Freelancer",
-              2000,
-            ]}
+            sequence={["MERN Stack Developer", 2000, "Freelancer", 2000]}
             speed={50}
             repeat={Infinity}
             wrapper="span"
@@ -94,7 +153,7 @@ const Hero = () => {
           Building modern, responsive web applications as a freelancer. Actively looking for a full-time role where I can contribute and grow as a developer.
         </p>
 
-        {/* Resume Button */}
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
           <a
             href="/resume.pdf"
@@ -104,6 +163,14 @@ const Hero = () => {
           >
             <FaDownload className="mr-2" />
             View Resume
+          </a>
+
+          {/* ✅ New Hire Me Button */}
+          <a
+            href="#contact"
+            className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+          >
+            Hire Me
           </a>
         </div>
 
@@ -144,20 +211,10 @@ const Hero = () => {
       </div>
 
       <style>{`
-        @keyframes fade {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        .animate-fade {
-          animation: fade 1s ease-in;
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
+        @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+        .animate-fade { animation: fade 1s ease-in; }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .animate-float { animation: float 4s ease-in-out infinite; }
       `}</style>
     </section>
   );

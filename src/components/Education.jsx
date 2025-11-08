@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaGraduationCap, FaAward, FaCertificate } from 'react-icons/fa';
 
 const Education = () => {
@@ -35,13 +35,45 @@ const Education = () => {
     }
   ];
 
+  const [visibleEdu, setVisibleEdu] = useState([]);
+  const [visibleCert, setVisibleCert] = useState([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const eduVisibility = education.map((_, index) => {
+        const element = document.getElementById(`edu-card-${index}`);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top < window.innerHeight - 100;
+        }
+        return false;
+      });
+
+      const certVisibility = certifications.map((_, index) => {
+        const element = document.getElementById(`cert-card-${index}`);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top < window.innerHeight - 100;
+        }
+        return false;
+      });
+
+      setVisibleEdu(eduVisibility);
+      setVisibleCert(certVisibility);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [education, certifications]);
+
   return (
     <section id="education" className="py-20 bg-gray-800">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16 text-white">
           Education & <span className="text-primary-400">Certifications</span>
         </h2>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Education */}
           <div>
@@ -49,27 +81,28 @@ const Education = () => {
               <FaGraduationCap className="text-primary-400 mr-3" />
               Education
             </h3>
-            
+
             <div className="space-y-6">
               {education.map((edu, index) => (
                 <div
                   key={index}
-                  className="bg-gray-900 rounded-2xl p-6 shadow-2xl transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-primary-500"
+                  id={`edu-card-${index}`}
+                  className={`bg-gray-900 rounded-2xl p-6 shadow-2xl border border-gray-700 transition-all duration-700 ease-in-out transform ${
+                    visibleEdu[index]
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-10"
+                  } hover:scale-105 hover:border-primary-500`}
                 >
                   <div className="flex items-start mb-4">
-                    <div className="text-2xl mr-4">
-                      {edu.icon}
-                    </div>
+                    <div className="text-2xl mr-4">{edu.icon}</div>
                     <div className="flex-1">
                       <h4 className="text-xl font-bold text-white mb-1">{edu.degree}</h4>
                       <p className="text-primary-400 font-semibold">{edu.institution}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex justify-between items-center mt-4">
-                    <span className="text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
-                      {edu.period}
-                    </span>
+                    <span className="text-gray-400 bg-gray-800 px-3 py-1 rounded-full">{edu.period}</span>
                     <span className="text-white bg-primary-500 px-3 py-1 rounded-full font-semibold">
                       Score: {edu.score}
                     </span>
@@ -78,24 +111,27 @@ const Education = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Certifications */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
               <FaAward className="text-primary-400 mr-3" />
               Certifications
             </h3>
-            
+
             <div className="space-y-6">
               {certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className="bg-gray-900 rounded-2xl p-6 shadow-2xl transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-primary-500"
+                  id={`cert-card-${index}`}
+                  className={`bg-gray-900 rounded-2xl p-6 shadow-2xl border border-gray-700 transition-all duration-700 ease-in-out transform ${
+                    visibleCert[index]
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-10"
+                  } hover:scale-105 hover:border-primary-500`}
                 >
                   <div className="flex items-start mb-4">
-                    <div className="text-2xl mr-4">
-                      {cert.icon}
-                    </div>
+                    <div className="text-2xl mr-4">{cert.icon}</div>
                     <div className="flex-1">
                       <h4 className="text-xl font-bold text-white mb-1">{cert.name}</h4>
                       <p className="text-primary-400 font-semibold mb-3">{cert.institution}</p>

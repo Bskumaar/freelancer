@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaLaptopCode, FaPalette, FaCalculator } from "react-icons/fa";
 
 const Experience = () => {
@@ -49,6 +49,27 @@ const Experience = () => {
     },
   ];
 
+  const [visible, setVisible] = useState([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const newVisible = experiences.map((_, index) => {
+        const element = document.getElementById(`exp-card-${index}`);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top < window.innerHeight - 100;
+        }
+        return false;
+      });
+      setVisible(newVisible);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initial check
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [experiences]);
+
   return (
     <section id="experience" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
@@ -56,12 +77,16 @@ const Experience = () => {
           Work <span className="text-primary-500">Experience</span>
         </h2>
 
-        {/* Single Row - 4 Cards Side by Side */}
         <div className="flex flex-wrap justify-center gap-6">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 transition-all duration-500 ease-in-out hover:(scale-105 -translate-y-2 border-blue-500 shadow-blue-500/30)"
+              id={`exp-card-${index}`}
+              className={`w-full sm:w-[48%] lg:w-[23%] bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 transition-all duration-700 ease-in-out transform ${
+                visible[index]
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              } hover:scale-105 hover:shadow-2xl hover:border-primary-500`}
             >
               <div className="flex items-center mb-4 space-x-4">
                 {exp.icon}
