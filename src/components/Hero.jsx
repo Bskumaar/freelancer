@@ -135,9 +135,10 @@ const Hero = () => {
           />
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-400 animate-pulse">
-          Sureshkumar Balakrishnan
-        </h1>
+       <h1 className="text-5xl md:text-7xl font-bold mb-4 text-primary-400">
+  Sureshkumar Balakrishnan
+</h1>
+
 
         <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
           <TypeAnimation

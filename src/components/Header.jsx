@@ -31,12 +31,21 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <a
-            href="#home"
-            className="text-2xl font-bold text-primary-400 animate-pulse"
-          >
-            Sureshkumar
-          </a>
+    <a
+  href="#home"
+  className="text-2xl font-bold flex items-center space-x-2"
+>
+  {/* SK Round Logo */}
+  <span className="bg-primary-400 text-black font-bold w-10 h-10 flex items-center justify-center rounded-full shadow-md">
+    SK
+  </span>
+
+  {/* Name */}
+  <span className="text-primary-400">
+    Sureshkumar
+  </span>
+</a>
+
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">

@@ -27,7 +27,7 @@ const Experience = () => {
     },
     {
       title: "Accountant & Computer Operator",
-      company: "TN HR&CE, Vecharanyam",
+      company: "TN HR&CE, Vedharanyam",
       period: "2015 – 2021",
       icon: <FaCalculator className="text-green-400 text-4xl" />,
       responsibilities: [

@@ -65,7 +65,7 @@ const Contact = () => {
           <div>
             <h3 className="text-2xl font-bold text-white mb-8">Let's Connect</h3>
             <p className="text-gray-300 mb-8 leading-relaxed">
-             Always open to new opportunities and feedback. Feel free to connect!
+            Always open to new opportunities. Feel free to connect!
 
             </p>
 
@@ -96,11 +96,11 @@ const Contact = () => {
             <div className="mt-8">
               <h4 className="text-white font-semibold mb-4">Follow Me</h4>
               <div className="flex space-x-4">
-                <a href="https://github.com/sureshkumarb" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/Bskumaar" target="_blank" rel="noopener noreferrer"
                   className="bg-gray-800 hover:bg-primary-600 text-white p-3 rounded-full transition-all duration-300">
                   <FaGithub size={20} />
                 </a>
-                <a href="https://linkedin.com/in/sureshkumarb" target="_blank" rel="noopener noreferrer"
+                <a href="https://linkedin.com/in/suresh-kumar-09a9b4374" target="_blank" rel="noopener noreferrer"
                   className="bg-gray-800 hover:bg-primary-600 text-white p-3 rounded-full transition-all duration-300">
                   <FaLinkedin size={20} />
                 </a>

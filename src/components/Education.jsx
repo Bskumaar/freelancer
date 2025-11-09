@@ -12,7 +12,7 @@ const Education = () => {
     },
     {
       degree: "12th Standard",
-      institution: "SKS Higher Secondary School, Vecharanyam",
+      institution: "SKS Higher Secondary School, Vedharanyam",
       period: "2007",
       score: "52.25%",
       icon: <FaAward className="text-primary-400" />
