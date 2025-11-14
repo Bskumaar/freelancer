@@ -20,7 +20,7 @@ const About = () => {
       direction: "right"
     },
     {
-      year: "2022",
+      year: "2022 - 2024",
       title: "🌟 Back to the VFX Industry",
       desc: "After 9 years, I got the opportunity to rejoin the VFX industry. Returning to my passion gave me immense confidence and reminded me of my love for creative work.",
       color: "border-primary-500",
@@ -30,19 +30,14 @@ const About = () => {
     {
       year: "2023 – Present",
       title: "🧠 Transition to Software Development",
-      desc: "In 2023, I started learning web development. I began with HTML and soon mastered CSS, Bootstrap, JavaScript, and React.js. Later, I completed the MERN Stack to become a full-stack developer.",
+      desc: "In 2023, I began learning web development, starting with HTML and progressively mastering CSS, Bootstrap, JavaScript, and React.js. I later completed the MERN Stack to become a full-stack developer. Along the way, I focused on building real-world applications through continuous practice and freelance-based projects, strengthening my skills in React.js, Node.js, Express.js, MongoDB, API development, and responsive UI design while delivering practical solutions for clients.",
       color: "border-primary-500",
       text: "text-primary-400",
       direction: "right"
     },
-    {
-      year: "Current",
-      title: "🚀 Freelance Developer",
-      desc: "I am currently working as a Freelance Developer, building responsive, user-friendly web applications for clients. My next goal is to join a software company and grow into a skilled Full Stack Developer.",
-      color: "border-primary-500",
-      text: "text-primary-400",
-      direction: "left"
-    }
+   
+
+  
   ];
 
   return (
@@ -111,7 +106,7 @@ const About = () => {
             {
               icon: <FaCode className="text-4xl text-primary-400 mb-4 mx-auto" />,
               title: "Frontend",
-              desc: "React.js, HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS"
+              desc: "React.js, HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, Figma"
             },
             {
               icon: <FaServer className="text-4xl text-primary-400 mb-4 mx-auto" />,

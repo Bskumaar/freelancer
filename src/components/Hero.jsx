@@ -136,7 +136,7 @@ const Hero = () => {
         </div>
 
        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-primary-400">
-  Sureshkumar Balakrishnan
+  Sureshkumar
 </h1>
 
 

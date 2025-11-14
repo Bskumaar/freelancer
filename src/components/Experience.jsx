@@ -4,14 +4,14 @@ import { FaLaptopCode, FaPalette, FaCalculator } from "react-icons/fa";
 const Experience = () => {
   const experiences = [
     {
-      title: "MERN Stack Developer",
-      company: "Freelancer",
-      period: "Sep 2024 – Present",
+      title: "Web Developer",
+      company: "Self-Learning, Practice & Freelance Development",
+      period: "2023 – Present",
       icon: <FaLaptopCode className="text-blue-400 text-4xl" />,
       responsibilities: [
-        "Developed and maintained dynamic websites using MERN Stack.",
-        "Built responsive UI and optimized performance.",
-        "Handled end-to-end project lifecycle and client communication.",
+        
+       "Built MERN stack projects with responsive UI and API integration.",
+      "Worked with React.js, Node.js, Express.js, MongoDB, and Git.",
       ],
     },
     {
