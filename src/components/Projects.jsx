@@ -75,8 +75,8 @@ const Projects = () => {
       ],
     },
   {
-  title: "TaskFlow – Hospital Management System",
-  client: "practice",
+  title: "Hospital Management System - (Process)",
+  client: "Vedha Clinic",
   description:
     "Created a full-stack project management application using the MERN Stack with JWT authentication, task handling, project management, and activity tracking features. Designed REST APIs and a fully responsive React interface ensuring seamless data flow and usability.",
   technologies: [

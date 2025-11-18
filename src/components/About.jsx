@@ -20,7 +20,7 @@ const About = () => {
       direction: "right"
     },
     {
-      year: "2022 - 2024",
+      year: "2022 - 2025",
       title: "🌟 Back to the VFX Industry",
       desc: "After 9 years, I got the opportunity to rejoin the VFX industry. Returning to my passion gave me immense confidence and reminded me of my love for creative work.",
       color: "border-primary-500",

@@ -17,7 +17,7 @@ const Experience = () => {
     {
       title: "VFX Artist",
       company: "Future Works Media Ltd, Chennai",
-      period: "Oct 2022 – Sep 2024",
+      period: "Oct 2022 – April 2025",
       icon: <FaPalette className="text-purple-400 text-4xl" />,
       responsibilities: [
         "Worked on visual effects for movies and commercials.",
