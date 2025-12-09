@@ -30,7 +30,7 @@ const Education = () => {
     {
       name: "MERN Stack Development",
       institution: "Besant Technologies, Velachary, Chennai",
-      year: "2024",
+      year: "2024-2025",
       icon: <FaCertificate className="text-primary-400" />
     }
   ];

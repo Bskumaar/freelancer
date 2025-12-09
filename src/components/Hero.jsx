@@ -12,7 +12,7 @@ const Hero = () => {
   const Experience = () => {
     const experiences = [
       {
-        title: "MERN Stack Developer",
+        title: "React Developer",
         company: "Freelancer",
         period: "Sep 2024 – Present",
         icon: <FaLaptopCode className="text-blue-400 text-4xl" />,
@@ -142,7 +142,7 @@ const Hero = () => {
 
         <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
           <TypeAnimation
-            sequence={["MERN Stack Developer", 2000, "Freelancer", 2000]}
+            sequence={["Frontend Developer", 2000,"React Developer","MERN Stack Developer", 2000, "Freelancer", 2000]}
             speed={50}
             repeat={Infinity}
             wrapper="span"

@@ -5,15 +5,15 @@ import { SiMongodb, SiExpress, SiJavascript, SiHtml5, SiCss3, SiBootstrap, SiTai
 
 const Skills = () => {
   const skills = [
-    { name: 'React.js', icon: <FaReact className="text-primary-400" />, level: 75 },
-    { name: 'Node.js', icon: <FaNodeJs className="text-green-500" />, level: 65 },
-    { name: 'Express.js', icon: <SiExpress className="text-gray-300" />, level: 75 },
-    { name: 'MongoDB', icon: <SiMongodb className="text-green-400" />, level: 65 },
-    { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" />, level: 85 },
-    { name: 'HTML5', icon: <SiHtml5 className="text-orange-500" />, level: 90 },
+     { name: 'HTML5', icon: <SiHtml5 className="text-orange-500" />, level: 90 },
     { name: 'CSS3', icon: <SiCss3 className="text-blue-500" />, level: 85 },
+    { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" />, level: 85 },
     { name: 'Bootstrap', icon: <SiBootstrap className="text-purple-500" />, level: 85 },
     { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-400" />, level: 85 },
+    { name: 'React.js', icon: <FaReact className="text-primary-400" />, level: 85 },
+    { name: 'Node.js', icon: <FaNodeJs className="text-green-500" />, level: 30 },
+    { name: 'Express.js', icon: <SiExpress className="text-gray-300" />, level: 30 },
+    { name: 'MongoDB', icon: <SiMongodb className="text-green-400" />, level: 30 },
     { name: 'GitHub', icon: <FaGitAlt className="text-red-500" />, level: 75 },
   ];
 

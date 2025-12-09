@@ -30,14 +30,11 @@ const About = () => {
     {
       year: "2023 – Present",
       title: "🧠 Transition to Software Development",
-      desc: "In 2023, I began learning web development, starting with HTML and progressively mastering CSS, Bootstrap, JavaScript, and React.js. I later completed the MERN Stack to become a full-stack developer. Along the way, I focused on building real-world applications through continuous practice and freelance-based projects, strengthening my skills in React.js, Node.js, Express.js, MongoDB, API development, and responsive UI design while delivering practical solutions for clients.",
+      desc: "Began web development journey in 2023 with HTML, later expanding skills in CSS, Bootstrap, JavaScript, and React.js. Gained 1 year of practical experience in React.js through continuous practice and freelance mini-projects, focusing on components, hooks, state management, and responsive UI. Gradually stepped into MERN development, holding basic working knowledge of Node.js, Express.js, MongoDB, and API handling. Aspiring to work in a real-time company as a Full Stack Developer, building efficient and scalable applications while continuously improving React and MERN skills with confidence and practical experience",
       color: "border-primary-500",
       text: "text-primary-400",
       direction: "right"
     },
-   
-
-  
   ];
 
   return (
@@ -82,7 +79,17 @@ const About = () => {
                 {step.title}
               </h3>
               <p className="text-gray-400 italic mb-2">{step.year}</p>
-              <p className="text-gray-300 leading-relaxed">{step.desc}</p>
+
+              {/* 2023 – Present step-க்கு bullet-point paragraph */}
+              {step.year === "2023 – Present" ? (
+                step.desc.split(". ").map((sentence, i) => (
+                  <p key={i} className="text-gray-300 leading-relaxed mb-2">
+                    • {sentence.trim()}.
+                  </p>
+                ))
+              ) : (
+                <p className="text-gray-300 leading-relaxed">{step.desc}</p>
+              )}
             </motion.div>
           ))}
 
@@ -110,7 +117,7 @@ const About = () => {
             },
             {
               icon: <FaServer className="text-4xl text-primary-400 mb-4 mx-auto" />,
-              title: "Backend",
+              title: "Backend (Basic)",
               desc: "Node.js, Express.js, MongoDB, REST APIs"
             },
             {

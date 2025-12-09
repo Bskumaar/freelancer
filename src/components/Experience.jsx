@@ -6,12 +6,13 @@ const Experience = () => {
     {
       title: "Web Developer",
       company: "Self-Learning, Practice & Freelance Development",
-      period: "2023 – Present",
+      period: "2024 – Present",
       icon: <FaLaptopCode className="text-blue-400 text-4xl" />,
       responsibilities: [
         
-       "Built MERN stack projects with responsive UI and API integration.",
-      "Worked with React.js, Node.js, Express.js, MongoDB, and Git.",
+       "Developing React-based projects with reusable components and responsive UI.",
+       "Integrated REST APIs using Axios and improved user experience.",
+    "Built mini freelance projects and hands-on practice applications.",
       ],
     },
     {
